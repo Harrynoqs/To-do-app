@@ -10,31 +10,20 @@ const getCheck = (element) => ` ${
     : `<input type="checkbox" aria-label="${element.index}" data-name="status" name="check">`
 } `;
 
-const showTask = (element) => `<div class="list show">
-    ${getCheck(element)}                
+const showTask = (element) => `<div class="list show">${getCheck(element)}                
     <p class="choreDesc ${element.completed ? 'strike' : ''}">${element.description}</p>
-    <i class="fa fa-bars menu-icon" aria-label="${
-  element.index
-}"  data-name="edit"></i>
-          </div>`;
+    <i class="fa fa-bars menu-icon" aria-label="${element.index}"  data-name="edit"></i>
+    </div>`;
 
-const editDesc = (element) => `<div class="list edit">
-                 ${getCheck(element)} 
-                <input type="text" class="desc" value="${
-  element.description
-}" aria-label ="${element.index}" >
-                <i class="fa fa-trash-o fa-2x" aria-label="${
-  element.index
-}"  data-name="delete"></i>
-          </div>`;
+const editDesc = (element) => `<div class="list edit"> ${getCheck(element)}<input type="text" class="desc" value="${
+  element.description}" aria-label ="${element.index}"><i class="fa fa-trash-o fa-2x" aria-label="${element.index}"data-name="delete"></i></div>`;
 
 const refresh = () => {
   const list = newChore.choreArray;
   let content = '';
   if (list) {
     list.forEach((element) => {
-      content += `${
-        element.edit ? editDesc(element) : showTask(element)
+      content += `${element.edit ? editDesc(element) : showTask(element)
       }`;
     });
   }
