@@ -4,17 +4,17 @@ class ToDoList {
   }
 
   refreshTasks() {
-    localStorage.setItem('toDoList', JSON.stringify(this.listArray));
+    localStorage.setItem('toDoList', JSON.stringify(this.choreArray));
   }
 
   getTasks() {
-    this.listArray = JSON.parse(localStorage.getItem('toDoList')) || [];
+    this.choreArray = JSON.parse(localStorage.getItem('toDoList')) || [];
   }
 
       showTasks = () => JSON.parse(localStorage.getItem('toDoList')) || [];
 
       setEdit(i) {
-        const task = this.listArray.find(
+        const task = this.choreArray.find(
           (item) => parseInt(item.index, 10) === parseInt(i, 10),
         );
         task.edit = true;
@@ -25,16 +25,16 @@ class ToDoList {
         const task = {
           description,
           completed: false,
-          index: this.listArray.length + 1,
+          index: this.choreArray.length + 1,
           edit: false,
         };
-        this.listArray = [...this.listArray, task];
+        this.choreArray = [...this.choreArray, task];
         this.refreshTasks();
       }
 
       removeTask(index) {
-        this.listArray = this.listArray.filter((item) => item.index !== index);
-        this.listArray = this.listArray.map((list, i) => {
+        this.choreArray = this.choreArray.filter((item) => item.index !== index);
+        this.choreArray = this.choreArray.map((list, i) => {
           list.index = i + 1;
           return list;
         });
@@ -42,24 +42,24 @@ class ToDoList {
       }
 
       changeComplete(i) {
-        const status = this.listArray[i - 1].completed;
-        this.listArray[i - 1] = {
-          ...this.listArray[i - 1],
+        const status = this.choreArray[i - 1].completed;
+        this.choreArray[i - 1] = {
+          ...this.choreArray[i - 1],
           completed: !status,
         };
         this.refreshTasks();
       }
 
       editTask(index, description) {
-        this.listArray[index - 1].description = description;
-        this.listArray[index - 1].edit = false;
+        this.choreArray[index - 1].description = description;
+        this.choreArray[index - 1].edit = false;
         this.refreshTasks();
       }
 
       clearCompleted() {
-        this.listArray = this.listArray.filter((item) => item.completed !== true);
-        if (this.listArray.length > 0) {
-          this.listArray = this.listArray.map((list, i) => {
+        this.choreArray = this.choreArray.filter((item) => item.completed !== true);
+        if (this.choreArray.length > 0) {
+          this.choreArray = this.choreArray.map((list, i) => {
             list.index = i + 1;
             return list;
           });

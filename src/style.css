@@ -34,9 +34,9 @@ h1 {
   font-weight: bolder;
 }
 
-#recycle {
+/* #recycle {
   color: gray;
-}
+} */
 
 .input {
   border: none;
@@ -125,4 +125,21 @@ input:focus {
 .menu-icon {
   cursor: pointer;
   color: rgb(60, 60, 59);
+}
+
+#recycle {
+  color: gray;
+  width: 30px;
+  height: 30px;
+}
+
+.heading i {
+  font-size: 30px;
+  color: #fff;
+}
+
+.heading i:hover {
+  cursor: pointer;
+  text-shadow: 1px 3px 5px #000;
+  transform: rotate(45deg);
 }

@@ -29,7 +29,7 @@ const editDesc = (element) => `<div class="list edit">
           </div>`;
 
 const refresh = () => {
-  const list = newChore.listArray;
+  const list = newChore.choreArray;
   let content = '';
   if (list) {
     list.forEach((element) => {
