@@ -1,13 +1,12 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Project Name
-To Do list: list structure
+## To Do list: add & remove
 
 > Description the project.
 
-In this project, I built a simple HTML list of To Do tasks. 
-The list was styled according to the specifications listed later in this lesson. 
-This simple web page was built using webpack and served by a webpack dev server.
+In this project, I implemented the CRUD (create, read, update, delete) methods. 
+All the elements of the user interface would be fully functional and my application will be completed..
 
 
 ## Built With
