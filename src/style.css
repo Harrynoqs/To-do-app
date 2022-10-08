@@ -13,28 +13,26 @@ html {
   margin: 0 auto;
   border: 1px solid rgba(220, 220, 220, 1);
   width: 550px;
-  max-width: 550px;
-  background-color: white;
-  box-shadow: 0 0 30px rgba(150, 150, 150, 0.25);
+  max-width: 540px;
+  background-color: rgb(230, 215, 215);
+  box-shadow: 0 0 36px darkgrey;
+  border-radius: 5px;
 }
 
 .heading {
   display: flex;
-  margin: 0;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgb(189, 192, 192);
+  border: 2px solid rgba(220, 220, 220, 1);
   padding: 0 1rem;
+  background-color: rgb(230, 215, 215);
 }
 
 h1 {
   color: gray;
   font-size: 1.5rem;
   font-weight: bolder;
-}
-
-#recycle {
-  color: gray;
+  background-color: rgb(230, 215, 215);
 }
 
 .input {
@@ -43,39 +41,103 @@ h1 {
   padding: 1rem 1rem;
   font-style: italic;
   font-family: 'inter', sans-serif;
+  background-color: rgb(230, 215, 215);
 }
 
 .list {
   display: flex;
   align-items: baseline;
-  border-bottom: 2px solid rgba(220, 220, 220, 1);
-  border-top: 2px solid rgba(220, 220, 220, 1);
-  padding: 0 1rem;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
+  border-top: 1px solid rgba(220, 220, 220, 1);
+  padding: 1rem 1rem;
 }
 
 .list p {
   margin-left: 1rem;
-  color: gray;
+  font-family: 'inter', sans-serif;
 }
 
-li {
-  list-style: none;
-  padding: 0 0;
-}
-
-a {
+i {
   margin-left: auto;
   color: gray;
-  font-size: 1rem;
+}
+
+.hide {
+  display: none;
 }
 
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
-  border-bottom: 2px solid #dcdcdc;
-  background-color: #eee;
-  color: #3f3e3e;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+  font-family: 'inter', sans-serif;
+}
+
+button {
+  border: none;
+  color: gray;
   font-size: 1rem;
+  font-family: 'inter', sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  color: rgb(71, 67, 67);
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-family: 'inter', sans-serif;
+}
+
+.edit {
+  background-color: lemonchiffon;
+  color: blue;
+}
+
+.edit input {
+  border: none;
+  background-color: lemonchiffon;
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: blue;
+  font-style: italic;
+}
+
+input:focus {
+  outline: none;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.fa-2x {
+  color: red;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.menu-icon {
+  cursor: pointer;
+  color: rgb(60, 60, 59);
+}
+
+#recycle {
+  color: gray;
+  width: 30px;
+  height: 30px;
+}
+
+.heading i {
+  font-size: 30px;
+  color: #fff;
+}
+
+.heading i:hover {
+  cursor: pointer;
+  text-shadow: 1px 3px 5px #000;
+  transform: rotate(45deg);
 }
