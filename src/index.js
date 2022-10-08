@@ -35,7 +35,7 @@ Element.addChore.addEventListener('keydown', (event) => {
   if (event.code === 'Enter') {
     const val = Element.addChore.value;
     if (val) {
-      newChore.addTask(val);
+      newChore.addChore(val);
       Element.addChore.value = '';
       refresh();
     }
@@ -46,7 +46,7 @@ Element.listChores.addEventListener('keydown', (event) => {
   if (event.code === 'Enter') {
     if (event.target.value) {
       const id = parseInt(event.target.ariaLabel, 10);
-      newChore.editTask(id, event.target.value);
+      newChore.editChore(id, event.target.value);
       refresh();
     }
   }
@@ -65,13 +65,13 @@ Element.listChores.addEventListener('click', (event) => {
       newChore.setEdit(event.target.ariaLabel);
       refresh();
     } else if (event.target.dataset.name === 'delete') {
-      newChore.removeTask(parseInt(event.target.ariaLabel, 10));
+      newChore.removeChore(parseInt(event.target.ariaLabel, 10));
       refresh();
     }
   }
 });
 
 Element.clear.addEventListener('click', () => {
-  newChore.clearCompleted();
+  newChore.clearCompleteChore();
   refresh();
 });

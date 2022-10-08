@@ -21,7 +21,7 @@ class ToDoChore {
         this.refreshTasks();
       }
 
-      addTask(description) {
+      addChore(description) {
         const task = {
           description,
           completed: false,
@@ -41,9 +41,9 @@ class ToDoChore {
         };
         this.refreshTasks();
       }
-      // removeTask
+      // removeChore
 
-      removeTask(index) {
+      removeChore(index) {
         this.choreArray = this.choreArray.filter((item) => item.index !== index);
         this.choreArray = this.choreArray.map((list, i) => {
           list.index = i + 1;
@@ -53,7 +53,7 @@ class ToDoChore {
       }
       // clear all completed
 
-      clearCompleted() {
+      clearCompleteChore() {
         this.choreArray = this.choreArray.filter((item) => item.completed !== true);
         if (this.choreArray.length > 0) {
           this.choreArray = this.choreArray.map((list, i) => {
@@ -64,7 +64,7 @@ class ToDoChore {
         this.refreshTasks();
       }
 
-      editTask(index, description) {
+      editChore(index, description) {
         this.choreArray[index - 1].description = description;
         this.choreArray[index - 1].edit = false;
         this.refreshTasks();

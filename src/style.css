@@ -11,10 +11,10 @@ html {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  border: 1px solid rgba(220, 220, 220, 1);
+  border: 1px solid #dcdcdc;
   width: 550px;
   max-width: 540px;
-  background-color: rgb(230, 215, 215);
+  background-color: #e6d7d7;
   box-shadow: 0 0 36px darkgrey;
   border-radius: 5px;
 }
@@ -23,9 +23,9 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid rgba(220, 220, 220, 1);
+  border: 2px solid #dcdcdc;
   padding: 0 1rem;
-  background-color: rgb(230, 215, 215);
+  background-color: #e6d7d7;
 }
 
 h1 {
@@ -41,14 +41,14 @@ h1 {
   padding: 1rem 1rem;
   font-style: italic;
   font-family: 'inter', sans-serif;
-  background-color: rgb(230, 215, 215);
+  background-color: #e6d7d7;
 }
 
 .list {
   display: flex;
   align-items: baseline;
-  border-bottom: 1px solid rgba(220, 220, 220, 1);
-  border-top: 1px solid rgba(220, 220, 220, 1);
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
   padding: 1rem 1rem;
 }
 
@@ -71,8 +71,8 @@ i {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid rgba(220, 220, 220, 1);
-  background-color: rgb(238, 238, 238);
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #eee;
   cursor: pointer;
   font-family: 'inter', sans-serif;
 }
