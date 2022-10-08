@@ -24,7 +24,7 @@ I added some functionality to my application to make it interactive. The user wi
 
 ## Live Demo (if available)
 
-[Live Demo Link]()
+[Live Demo Link](https://harrynoqs.github.io/To-do-app/dist/)
 
 
 ## Getting Started
