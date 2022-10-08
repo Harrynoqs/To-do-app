@@ -1,13 +1,13 @@
 import './style.css';
-import TodoList from './modules/Todolist.js';
+import ToDoChore from './modules/Todolist.js';
 import * as Element from './modules/declarez.js';
 
-const newChore = new TodoList();
+const newChore = new ToDoChore();
 
 const getCheck = (element) => ` ${
   element.completed
-    ? `<input type="checkbox" aria-label="${element.index}" data-name="status" name="check" checked>`
-    : `<input type="checkbox" aria-label="${element.index}" data-name="status" name="check">`
+    ? `<input type="checkbox" aria-label="${element.index}" data-name="status" name="checked" checked>`
+    : `<input type="checkbox" aria-label="${element.index}" data-name="status" name="checked">`
 } `;
 
 const showTask = (element) => `<div class="list show">${getCheck(element)}                
@@ -31,24 +31,12 @@ const refresh = () => {
 };
 refresh();
 
-Element.addList.addEventListener('keydown', (event) => {
+Element.addChore.addEventListener('keydown', (event) => {
   if (event.code === 'Enter') {
-    const val = Element.addList.value;
+    const val = Element.addChore.value;
     if (val) {
       newChore.addTask(val);
-      Element.addList.value = '';
-      refresh();
-    }
-  }
-});
-
-Element.listChores.addEventListener('click', (event) => {
-  if (event.target.nodeName === 'I') {
-    if (event.target.dataset.name === 'edit') {
-      newChore.setEdit(event.target.ariaLabel);
-      refresh();
-    } else if (event.target.dataset.name === 'delete') {
-      newChore.removeTask(parseInt(event.target.ariaLabel, 10));
+      Element.addChore.value = '';
       refresh();
     }
   }
@@ -68,6 +56,18 @@ Element.listChores.addEventListener('change', (event) => {
   if (event.target.dataset.name === 'status') {
     newChore.changeComplete(parseInt(event.target.ariaLabel, 10));
     refresh();
+  }
+});
+
+Element.listChores.addEventListener('click', (event) => {
+  if (event.target.nodeName === 'I') {
+    if (event.target.dataset.name === 'edit') {
+      newChore.setEdit(event.target.ariaLabel);
+      refresh();
+    } else if (event.target.dataset.name === 'delete') {
+      newChore.removeTask(parseInt(event.target.ariaLabel, 10));
+      refresh();
+    }
   }
 });
 

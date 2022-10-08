@@ -12,26 +12,27 @@ html {
   align-items: center;
   margin: 0 auto;
   border: 1px solid rgba(220, 220, 220, 1);
-  width: 500px;
-  max-width: 500px;
-  background-color: white;
-  box-shadow: 0 0 30px rgba(150, 150, 150, 0.25);
+  width: 550px;
+  max-width: 540px;
+  background-color: rgb(230, 215, 215);
+  box-shadow: 0 0 36px darkgrey;
   border-radius: 5px;
 }
 
 .heading {
   display: flex;
-  margin: 0;
   justify-content: space-between;
   align-items: center;
   border: 2px solid rgba(220, 220, 220, 1);
   padding: 0 1rem;
+  background-color: rgb(230, 215, 215);
 }
 
 h1 {
   color: gray;
   font-size: 1.5rem;
   font-weight: bolder;
+  background-color: rgb(230, 215, 215);
 }
 
 .input {
@@ -40,6 +41,7 @@ h1 {
   padding: 1rem 1rem;
   font-style: italic;
   font-family: 'inter', sans-serif;
+  background-color: rgb(230, 215, 215);
 }
 
 .list {

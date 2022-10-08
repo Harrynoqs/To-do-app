@@ -1,4 +1,4 @@
-class ToDoList {
+class ToDoChore {
   constructor() {
     this.getTasks();
   }
@@ -32,15 +32,7 @@ class ToDoList {
         this.refreshTasks();
       }
 
-      removeTask(index) {
-        this.choreArray = this.choreArray.filter((item) => item.index !== index);
-        this.choreArray = this.choreArray.map((list, i) => {
-          list.index = i + 1;
-          return list;
-        });
-        this.refreshTasks();
-      }
-
+      // editing of task
       changeComplete(i) {
         const status = this.choreArray[i - 1].completed;
         this.choreArray[i - 1] = {
@@ -49,12 +41,17 @@ class ToDoList {
         };
         this.refreshTasks();
       }
+      // removeTask
 
-      editTask(index, description) {
-        this.choreArray[index - 1].description = description;
-        this.choreArray[index - 1].edit = false;
+      removeTask(index) {
+        this.choreArray = this.choreArray.filter((item) => item.index !== index);
+        this.choreArray = this.choreArray.map((list, i) => {
+          list.index = i + 1;
+          return list;
+        });
         this.refreshTasks();
       }
+      // clear all completed
 
       clearCompleted() {
         this.choreArray = this.choreArray.filter((item) => item.completed !== true);
@@ -66,6 +63,12 @@ class ToDoList {
         }
         this.refreshTasks();
       }
+
+      editTask(index, description) {
+        this.choreArray[index - 1].description = description;
+        this.choreArray[index - 1].edit = false;
+        this.refreshTasks();
+      }
 }
 
-export default ToDoList;
+export default ToDoChore;
