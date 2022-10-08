@@ -21,7 +21,7 @@ class ToDoChore {
         this.refreshTasks();
       }
 
-      addTask(description) {
+      addchore(description) {
         const task = {
           description,
           completed: false,
@@ -33,7 +33,7 @@ class ToDoChore {
       }
 
       // editing of task
-      changeComplete(i) {
+      editComplete(i) {
         const status = this.choreArray[i - 1].completed;
         this.choreArray[i - 1] = {
           ...this.choreArray[i - 1],
