@@ -28,11 +28,20 @@ html {
   background-color: #e6d7d7;
 }
 
+.addSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #dcdcdc;
+  padding: 0 1rem;
+  background-color: #e6d7d7;
+}
+
 h1 {
   color: gray;
   font-size: 1.5rem;
   font-weight: bolder;
-  background-color: rgb(230, 215, 215);
+  background-color: #e6d7d7;
 }
 
 .input {
@@ -112,6 +121,7 @@ input:focus {
 
 .strike {
   text-decoration: line-through;
+  color: red;
 }
 
 .fa-2x {
@@ -136,8 +146,24 @@ input:focus {
   color: #fff;
 }
 
+.addSection i {
+  font-size: 30px;
+  color: #fff;
+}
+
 .heading i:hover {
   cursor: pointer;
   text-shadow: 1px 3px 5px #000;
   transform: rotate(45deg);
+}
+
+#fa-check {
+  color: green;
+  width: 30px;
+  height: 30px;
+}
+
+.addSection i:hover {
+  cursor: pointer;
+  text-shadow: 1px 3px 5px #000;
 }

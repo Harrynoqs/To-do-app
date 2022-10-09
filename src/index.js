@@ -1,6 +1,6 @@
 import './style.css';
 import ToDoChore from './modules/Todolist.js';
-import * as Element from './modules/declarez.js';
+import * as Working from './modules/declarez.js';
 
 const newChore = new ToDoChore();
 
@@ -11,12 +11,12 @@ const getCheck = (element) => ` ${
 } `;
 
 const showTask = (element) => `<div class="list show">${getCheck(element)}                
-    <p class="choreDesc ${element.completed ? 'strike' : ''}">${element.description}</p>
+    <p class="choreDesc ${element.completed ? 'strike' : ''}">${element.choreDescription}</p>
     <i class="fa fa-bars menu-icon" aria-label="${element.index}"  data-name="edit"></i>
     </div>`;
 
 const editDesc = (element) => `<div class="list edit"> ${getCheck(element)}<input type="text" class="desc" value="${
-  element.description}" aria-label ="${element.index}"><i class="fa fa-trash-o fa-2x" aria-label="${element.index}"data-name="delete"></i></div>`;
+  element.choreDescription}" aria-label ="${element.index}"><i class="fa fa-trash-o fa-2x" aria-label="${element.index}"data-name="delete"></i></div>`;
 
 const refresh = () => {
   const list = newChore.choreArray;
@@ -27,22 +27,22 @@ const refresh = () => {
       }`;
     });
   }
-  Element.listChores.innerHTML = content;
+  Working.listChores.innerHTML = content;
 };
 refresh();
 
-Element.addChore.addEventListener('keydown', (event) => {
+Working.addChore.addEventListener('keydown', (event) => {
   if (event.code === 'Enter') {
-    const val = Element.addChore.value;
+    const val = Working.addChore.value;
     if (val) {
       newChore.addChore(val);
-      Element.addChore.value = '';
+      Working.addChore.value = '';
       refresh();
     }
   }
 });
 
-Element.listChores.addEventListener('keydown', (event) => {
+Working.listChores.addEventListener('keydown', (event) => {
   if (event.code === 'Enter') {
     if (event.target.value) {
       const id = parseInt(event.target.ariaLabel, 10);
@@ -52,14 +52,14 @@ Element.listChores.addEventListener('keydown', (event) => {
   }
 });
 
-Element.listChores.addEventListener('change', (event) => {
+Working.listChores.addEventListener('change', (event) => {
   if (event.target.dataset.name === 'status') {
     newChore.changeComplete(parseInt(event.target.ariaLabel, 10));
     refresh();
   }
 });
 
-Element.listChores.addEventListener('click', (event) => {
+Working.listChores.addEventListener('click', (event) => {
   if (event.target.nodeName === 'I') {
     if (event.target.dataset.name === 'edit') {
       newChore.setEdit(event.target.ariaLabel);
@@ -71,7 +71,17 @@ Element.listChores.addEventListener('click', (event) => {
   }
 });
 
-Element.clear.addEventListener('click', () => {
+Working.clear.addEventListener('click', () => {
+  newChore.clearCompleteChore();
+  refresh();
+});
+
+Working.clears.addEventListener('click', () => {
+  newChore.clearCompleteChore();
+  refresh();
+});
+
+Working.addChores.addEventListener('click', () => {
   newChore.clearCompleteChore();
   refresh();
 });
