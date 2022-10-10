@@ -1,24 +1,18 @@
 class ToDoChore {
   constructor() {
-    this.getTasks();
-  }
-
-  refreshTasks() {
-    localStorage.setItem('toDochore', JSON.stringify(this.choreArray));
-  }
-
-  showTasks = () => JSON.parse(localStorage.getItem('toDochore')) || [];
-
-  getTasks() {
     this.choreArray = JSON.parse(localStorage.getItem('toDochore')) || [];
   }
 
-  setEdit(i) {
+  refreshTasks = () => {
+    localStorage.setItem('toDochore', JSON.stringify(this.choreArray));
+  }
+
+  setEdit = (i) => {
     const task = this.choreArray.find((item) => parseInt(item.index, 10) === parseInt(i, 10));
     task.edit = true; this.refreshTasks();
   }
 
-  addChore(choreDescription) {
+  addChore = (choreDescription) => {
     const task = {
       choreDescription,
       completed: false,
@@ -30,7 +24,7 @@ class ToDoChore {
   }
 
   // editing of task
-  changeComplete(i) {
+  changeComplete =(i) => {
     const status = this.choreArray[i - 1].completed;
     this.choreArray[i - 1] = {
       ...this.choreArray[i - 1],
@@ -40,7 +34,7 @@ class ToDoChore {
   }
   // removeChore
 
-  removeChore(index) {
+  removeChore = (index) => {
     this.choreArray = this.choreArray.filter((item) => item.index !== index);
     this.choreArray = this.choreArray.map((list, i) => {
       list.index = i + 1;
@@ -50,7 +44,7 @@ class ToDoChore {
   }
   // clear all completed
 
-  clearCompleteChore() {
+  clearCompleteChore = () => {
     this.choreArray = this.choreArray.filter((item) => item.completed !== true);
     if (this.choreArray.length > 0) {
       this.choreArray = this.choreArray.map((list, i) => {
@@ -61,7 +55,7 @@ class ToDoChore {
     this.refreshTasks();
   }
 
-  editChore(index, choreDescription) {
+  editChore = (index, choreDescription) => {
     this.choreArray[index - 1].choreDescription = choreDescription;
     this.choreArray[index - 1].edit = false;
     this.refreshTasks();
